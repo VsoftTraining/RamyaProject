@@ -1,5 +1,6 @@
 const express = require("express");
 console.log("NEW SERVER FILE LOADED 🚀");
+
 const cors = require("cors");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
@@ -8,7 +9,8 @@ const authRoutes = require("./routes/authRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const webhookRoutes = require("./routes/webhookRoutes");
 dotenv.config();
-
+console.log("Instagram ID:", process.env.INSTAGRAM_BUSINESS_ID);
+console.log("Token Loaded:", process.env.INSTAGRAM_ACCESS_TOKEN ? "YES" : "NO");
 const app = express();
 app.get("/ramya", (req, res) => {
   res.send("Ramya Route Working ✅");
